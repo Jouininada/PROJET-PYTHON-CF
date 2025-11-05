@@ -1,0 +1,11 @@
+{% extends "base.html"%}
+{% block content %}
+<h1>Conference Details</h1>
+
+<p><strong>Title:</strong> {{ conference.name }}</p>
+<p><strong>Theme:</strong> {{ conference.theme }}</p>
+<p><strong>Location:</strong> {{ conference.location }}</p>
+<p><strong>Start Date:</strong> {{ conference.start_date }}</p>
+<p><strong>End Date:</strong> {{ conference.end_date }}</p>
+
+{% endblock %}

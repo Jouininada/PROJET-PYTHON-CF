@@ -1,17 +1,28 @@
+{% extends "base.html"%}
+{% block content %} 
 <h2>List of Conferences</h2>
-<table>
+<table border="1">
   <tr>
-    <td>title</td>
-    <td>location</td>
+    <th>Title</th>
+    <th>Theme</th>
+    <th>Location</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Action</th>
   </tr>
-  {% for c in conferences%}
-
+  {% for c in conferences %}
   <tr>
     <td>{{ c.name }}</td>
     <td>{{ c.theme }}</td>
     <td>{{ c.location }}</td>
     <td>{{ c.start_date }}</td>
     <td>{{ c.end_date }}</td>
+    <td>
+      <a href="{% url 'conference-details' c.pk %}">View Details</a> |
+      <a href="{% url 'conference-edit' c.pk %}">Modifier</a>
+      <a href="{% url 'conference-delete' c.pk %}">Supprimer</a>
+    </td>
   </tr>
   {% endfor %}
 </table>
+{% endblock %}
